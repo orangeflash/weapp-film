@@ -1,0 +1,40 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/details/details",
+    "pages/cinema/cinema",
+    "pages/cmdetail/cmdetail",
+    "pages/my/my",
+    "pages/mydetail/mydetail"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#FF4D64",
+    "navigationBarTitleText": "淘票",
+    "backgroundColor":"#FFF",
+    "navigationBarTextStyle":"white"
+  },
+   "tabBar": {
+    "color":"green",
+    "selectedColor":"red",
+    "backgroundColor":"white",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "电影",
+      "iconPath":"images/a.png",
+      "selectedIconPath":"images/b.png"
+    }, {
+      "pagePath": "pages/cinema/cinema",
+      "text": "影院",
+       "iconPath":"images/c.png",
+      "selectedIconPath":"images/d.png"
+    },
+    {
+      "pagePath": "pages/my/my",
+      "text": "我的",
+       "iconPath":"images/g.png",
+      "selectedIconPath":"images/h.png"
+    }
+    ]
+  }
+}

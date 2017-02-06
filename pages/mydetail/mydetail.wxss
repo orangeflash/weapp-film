@@ -1,0 +1,16 @@
+.weui-navbar__slider{
+    background-color: red;
+}
+.weui-navbar__item {
+  position: relative;
+  display: block;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  padding: 13px 0;
+  text-align: center;
+  font-size: 0;
+}
+.weui-navbar__item.weui-bar__item_on {
+  color: red; 
+}

@@ -1,0 +1,5 @@
+/**app.wxss**/
+@import "config/config.wxss";
+page{
+	font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+}

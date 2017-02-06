@@ -1,0 +1,306 @@
+/*.movie{
+  box-sizing: border-box;
+  width: 750rpx;
+  padding: 10rpx 15rpx;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.movie-item{
+    width: 350rpx;
+    margin-bottom: 10rpx;
+    background-color: greenyellow;
+    overflow: hidden;
+}
+.movie-cover{
+  width: 305rpx;
+}*/
+
+.detail-size {
+  height: 40rpx;
+  font-size: 20px;
+  color: red;
+  margin-top: 0rpx;
+}
+
+.detail-size .star {
+  width: 100rpx;
+  height: 20rpx;
+  background: url(../../images/i-star.png) no-repeat;
+  background-size: 100rpx;
+  display: inline-block;
+  margin-right: 10rpx;
+}
+
+.stars {
+  width: 100rpx;
+  height: 20rpx;
+  background: url(../../images/i-stars.png) no-repeat;
+  background-size: 100rpx;
+  float: left;
+  margin-right: 10rpx;
+}
+
+.playnow {
+  padding: 10rpx 18rpx;
+  border: 1rpx solid #37b7ff;
+  font-size: 25px;
+  color: #37b7ff;
+  border-radius: 6rpx;
+  text-align: center;
+}
+
+/**额外样式**/
+
+.class {
+  background-color: snow;
+}
+
+.body {
+  background-color: #fbf9fe;
+  width: 750rpx;
+}
+
+.cinema-info {
+  background-color: #fff;
+  padding: 30rpx 20rpx;
+}
+
+.cinema-name {
+  font-size: 40rpx;
+  margin-bottom: 10rpx;
+  font-family: "楷体";
+}
+
+.cinema-addr {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 80%;
+  font-size: 35rpx;
+  color: #999;
+  margin-bottom: 10rpx;
+}
+
+.cinema-tel {
+  font-size: 35rpx;
+  color: orangered;
+}
+
+.no-movies-info {
+  font-size: 50rpx;
+  width: 100%;
+  height: 80vh;
+  margin-top: 25rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  color: red;
+}
+
+.movies-list {
+  margin-top: 25rpx;
+  background-color: #fff;
+  width: 100%;
+}
+
+.movies-title {
+  margin-left: 20rpx;
+  font-size: 40rpx;
+  line-height: 100rpx;
+  font-family: "仿宋";
+}
+
+/**电影列表滚动条**/
+
+.movies-img-scroll {
+  white-space: nowrap;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/*display 属性规定元素应该生成的框的类型*/
+
+.movie-img {
+  display: inline-block;
+  margin: 0 8px;
+  height: 100%;
+}
+
+/*.movie-img-flex {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}*/
+
+.normal-img {
+  width: 67px;
+  height: 94px;
+  margin-top: 25px;
+  opacity: 0.5;
+  transition: width 0.4s, height 0.4s, transform 0.4s;
+}
+
+.big-img {
+  width: 76px;
+  height: 107px;
+  margin-top: 8px;
+  border: 2px solid #fff;
+  opacity: 1;
+}
+
+.movie-info {
+  padding: 30rpx 20rpx;
+  position: relative;
+  text-align: center;
+}
+
+.movie-info::after {
+  position: absolute;
+  content: '';
+  width: 20rpx;
+  height: 20rpx;
+  top: -8rpx;
+  left: 365rpx;
+  background-color: #fff;
+  transform: rotate(45deg);
+}
+
+/*通过js控制选中的图片显示大小和透明度*/
+
+/*.normal-img {
+  width: 67px;
+  height: 94px;
+  opacity: 0.5;
+}
+
+.big-img {
+  width: 72px;
+  height: 101px;
+  opacity: 1;
+}
+
+影片信息
+
+.movie-info {
+  padding: 20rpx 20rpx;
+  text-align: center;
+}
+*/
+
+.movie-title {
+  margin-bottom: 0rpx;
+}
+
+.movie-name {
+  font-size: 35rpx;
+}
+
+.movie-sc {
+  font-size: 30rpx;
+  margin-left: 20rpx;
+  color: orange;
+}
+
+.movie-scm {
+  font-size: 30rpx;
+  color: #333;
+}
+
+/*售票信息*/
+
+.movie-show {
+  margin-top: 25rpx;
+  background-color: #fff;
+}
+
+.date-scroll {
+  white-space: nowrap;
+  border-bottom: 1px solid #ccc;
+}
+
+/*通过js控制样式*/
+
+.show-date {
+  display: inline-block;
+  padding: 25rpx 30rpx;
+  font-size: 30rpx;
+}
+
+.show-selected {
+  color: #1afa29;
+  position: relative;
+}
+
+/*选中时候 伪类下划线*/
+
+.show-selected::after {
+  content: '';
+  width: 100%;
+  position: absolute;
+  height: 5rpx;
+  background-color: #1afa29;
+  bottom: 0;
+  left: 0;
+}
+
+.show-info {
+  position: relative;
+  padding-top: 26rpx;
+  padding-bottom: 26rpx;
+  padding-left: 40rpx;
+  padding-right: 40rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.sell-false {
+  color: #ccc;
+}
+
+.show-tm {
+  font-size: 40rpx;
+}
+
+.show-body {
+  margin-left: 80rpx;
+}
+
+.show-lang-tp {
+  font-size: 30rpx;
+}
+
+.show-th {
+  font-size: 25rpx;
+  width: 200rpx;
+}
+
+.show-price {
+  position: absolute;
+  right: 30rpx;
+}
+
+.show-pr {
+  font-size: 25rpx;
+  text-decoration: line-through;
+  color: #ccc;
+}
+
+.show-sellPr {
+  font-size: 40rpx;
+  color: orangered;
+}
+
+.show-line {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 2rpx;
+  background-color: #f0f0f0;
+}

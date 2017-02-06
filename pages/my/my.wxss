@@ -1,0 +1,28 @@
+image{
+    width: 40rpx;
+    height: 40rpx;
+    position: absolute;
+    right: 30rpx;
+    top:20rpx;
+}
+.page1{
+   width: 100%;
+   background: ghostwhite
+   
+}
+.page2{
+   width: 100%;
+   margin-top: 25px;
+   background:ghostwhite 
+}
+.list1{
+    position: relative;
+    border-bottom: 1rpx solid gainsboro; 
+    padding: 10rpx 30rpx;
+}
+text{
+    font-family: 楷体
+}
+page{
+    background-color: #eeeeee;
+}

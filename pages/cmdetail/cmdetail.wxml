@@ -1,0 +1,117 @@
+
+<!--<view class="class">
+  <view>
+    <image src="../../images/map.png" style="width:100rpx; height:100rpx"></image>{{films.cinemaName}}</view>
+  <view style="text-align:center;color:red">电话：{{tel}}</view>
+  <view style="color:green">
+    <image src="../../images/bus.png" style="width:100rpx; height:100rpx"></image>{{films.cinemaDetailModel.bus}}</view>
+</view>
+<view class="playnow">
+  <text>影院热映</text>
+</view>
+<view class="movie">
+  <view wx:for="{{films.movies}}" class="movie-item">
+    <view class="movie-cover">
+      <image src="{{item.img}}"></image>
+      <view class="detail-brief">{{item.nm}}</view>
+      <view class="detail-size">
+        <view class="star">
+          <view style="width: {{item.sc * 10}}%" class="stars"></view>
+        </view>{{item.sc}}</view>
+      <view class="detail-brief">场景:{{item.ver}}</view>
+    </view>
+  </view>
+</view> 
+<scroll-view scroll-x="true" class="movies-img-scroll" style="height:116px;width:100%;" scroll-left="{{scrollLeft}}">
+  <block wx:for="{{movies}}" wx:key="item.id">
+    <view class="movie-img">
+      <view class="movie-img-flex" bindtap="chooseMovie" data-index="{{index}}">
+        <image src="{{item.img}}" class="{{movieIndex==index?'big-img':'normal-img'}}" />
+      </view>
+    </view>
+  </block>
+</scroll-view>-->
+
+<!--<view>{{id}}</view>-->
+<loading wx:if="{{loading}}">加载中...</loading>
+<view class="body" wx:else>
+  <view class="class">
+    <view>
+      <image src="../../images/map.png" style="width:100rpx; height:100rpx"></image>{{films.cinemaName}}</view>
+    <view style="text-align:center;color:red">电话：{{tel}}</view>
+    <view style="color:green">
+      <image src="../../images/bus.png" style="width:100rpx; height:100rpx"></image>{{addr}}</view>
+  </view>
+  <view wx:if="{{movies.length==0}}" class="no-movies-info">
+    未查询到相关电影上映信息!
+  </view>
+  <view wx:else>
+    <view class="movies-list">
+      <view class="playnow">
+        <text>影院热映</text>
+      </view>
+      <scroll-view scroll-x="true" class="movies-img-scroll" style="height:128px;width:100%;background-color:{{colors[index]}}" scroll-left="{{scrollLeft}}" bindscroll="scrollmd">
+        <block wx:for="{{movies}}" wx:key="item.id">
+          <view class="movie-img">
+            <view class="movie-img-flex" bindtap="chooseMovie" data-index="{{index}}">
+              <image src="{{item.img}}" class="{{movieIndex==index?'big-img':'normal-img'}} " style="margin-left:{{index==0?left:'0'}}px;margin-right:{{index==movies.length-1?left:0}}px" />
+            </view>
+            <!--点击图片触发chooseMovie事件调用this.setData方法改变movieIndex重新渲染页面，所以下面的电影场次会更新-->
+          </view>
+        </block>
+      </scroll-view>
+      <!--影片信息-->
+      <view class="movie-info">
+        <view class="movie-title">
+          <text class="movie-name">{{movies[movieIndex].nm}}</text>
+
+          <!--<text class="movie-sc">{{movies[movieIndex].sc}}分</text>-->
+        </view>
+        <view class="detail-size">
+          <view class="star">
+            <view style="width: {{movies[movieIndex].sc * 10}}%" class="stars"></view>
+          </view>{{movies[movieIndex].sc}}分
+        </view>
+        <view class="movie-scm">
+          {{movies[movieIndex].scm}}
+        </view>
+      </view>
+    </view>
+    <view class="movie-show">
+      <!--影片上映时间-->
+      <scroll-view scroll-x="true" class="date-scroll" style="width:100%;">
+        <block wx:for="{{movies[movieIndex].shows}}" wx:key="item.showDate">
+          <view class="show-date {{dateIndex==index?'show-selected':''}}" bindtap="chooseDate" data-index="{{index}}" style="{{index==0?'margin-left:20rpx;':''}}">
+          <!--index是数组默认下标索引是没变的，chooseDate方法触发改变dateIndex值，进行2者判断添加样式-->
+            {{item.showDate}}
+          </view>
+        </block>
+      </scroll-view>
+      <!--影片上映场次-->
+      <block wx:for="{{movies[movieIndex].shows[dateIndex].plist}}" wx:key="item.showId">
+        <view class="show-info {{item.sell?'':'sell-false'}}">
+          <view class="show-tm">
+            {{item.tm}}
+          </view>
+          <view class="show-body">
+            <view class="show-lang-tp">
+              {{item.lang}}{{item.tp}}
+            </view>
+            <view class="show-th">
+              {{item.th}}
+            </view>
+          </view>
+          <view class="show-price" wx:if="{{!item.sell}}">
+            已关闭售票
+          </view>
+          <view class="show-price" wx:else>
+            <text class="show-pr">￥{{item.pr}}</text>
+            <text class="show-sellPr">￥{{item.sellPr}}</text>
+          </view>
+          <view class="{{index==0?'':'show-line'}}">
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
